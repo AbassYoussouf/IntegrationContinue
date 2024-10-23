@@ -22,7 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: integrationcontinue
 
   lint:
     runs-on: ubuntu-latest
@@ -33,7 +32,6 @@ jobs:
 
       - name: Run lint
         run: npm run lint
-        working-directory: integrationcontinue
 
   test:
     runs-on: ubuntu-latest
@@ -44,7 +42,6 @@ jobs:
 
       - name: Run tests
         run: npm test
-        working-directory: integrationcontinue
 
   build:
     runs-on: ubuntu-latest
@@ -55,7 +52,6 @@ jobs:
 
       - name: Run build
         run: npm run build
-        working-directory: integrationcontinue
 
   release:
     runs-on: ubuntu-latest
@@ -63,7 +59,6 @@ jobs:
     steps:
       - name: Create release
         run: npx --yes release-it --ci
-        working-directory: integrationcontinue
 
   deploy:
     runs-on: ubuntu-latest
@@ -71,5 +66,4 @@ jobs:
     steps:
       - name: Deploy application
         run: echo "Deploy step (to be implemented)"
-        working-directory: integrationcontinue
 
