@@ -66,6 +66,13 @@ jobs:
     steps:
       - name: Echo Hello E2E
         run: echo "Hello E2E !"
+        
+  only-canary:
+    if: env.ENV_TARGET == 'canary'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello Only Canary
+        run: echo "Hello Only Canary !"
 
   release:
     runs-on: ubuntu-latest
