@@ -43,7 +43,7 @@ jobs:
 
   unit-test:
     runs-on: ubuntu-latest
-    needs: test
+    needs: validate
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
