@@ -68,7 +68,7 @@ jobs:
         run: echo "Hello E2E !"
         
   only-canary:
-    if: env.ENV_TARGET == 'canary'
+    if: ${{ env.ENV_TARGET == 'canary' }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo Hello Only Canary
