@@ -71,7 +71,7 @@ jobs:
           git config user.name "${{ secrets.GITHUB_USER_NAME }}"
       - name: Set up Git remote
         run: |
-          git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git remote set-url origin "https://${{ secrets.GITH_TOKEN }}@github.com/${{ github.repository }}.git"
           git checkout main
           git pull origin main --rebase
       - name: Run release-it
