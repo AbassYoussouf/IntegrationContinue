@@ -49,6 +49,12 @@ jobs:
         run: npm ci
       - name: Run unit tests
         run: npm test
+ e2e-test:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello E2E
+        run: echo "Hello E2E !"
 
   build:
     runs-on: ubuntu-latest
