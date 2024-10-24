@@ -68,7 +68,7 @@ jobs:
         run: echo "Hello E2E !"
         
   only-canary:
-    if: ${{ env.ENV_TARGET == 'canary' }}
+    if: ${{ secrets.ENV_TARGET == 'canary' }}  # Accès correct aux secrets
     runs-on: ubuntu-latest
     steps:
       - name: Echo Hello Only Canary
@@ -94,7 +94,7 @@ jobs:
           git pull origin main --rebase
       - name: Run release-it
         env:
-          GITH_TOKEN: ${{ secrets.GITH_TOKEN }}
+          GITH_TOKEN: ${{ secrets.GITH_TOKEN }}  # Assurez-vous que GITH_TOKEN est correctement défini dans les secrets
         run: npx release-it --ci
 
   deploy:
